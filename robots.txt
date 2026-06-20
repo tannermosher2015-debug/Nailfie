@@ -1,0 +1,4 @@
+# PITCH BUILD — keep this sample out of search until Maylei is a signed client.
+# When it goes live: replace the block below with "Allow: /" and remove the noindex meta + _headers rule.
+User-agent: *
+Disallow: /
