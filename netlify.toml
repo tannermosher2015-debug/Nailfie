@@ -1,0 +1,7 @@
+# Netlify config — Nailfie Studio (static single-file site, no build step).
+# Files live at the repo root, so publish = "." and no build command.
+# noindex headers live in ./_headers (X-Robots-Tag) — kept there so the pitch
+# guard is obvious. Remove ./_headers + ./robots.txt + the noindex <meta> at go-live.
+
+[build]
+  publish = "."
