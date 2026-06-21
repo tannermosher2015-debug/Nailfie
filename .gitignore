@@ -5,3 +5,6 @@ desktop.ini
 *.swp
 .vscode/
 .idea/
+
+# Scraped IG originals + image-prep scratch — keep local, don't deploy
+images/source/
