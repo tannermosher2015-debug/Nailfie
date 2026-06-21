@@ -12,8 +12,9 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Nailfie Studio HI — Sculpted Nail Artistry in Wailuku" />
 <meta property="og:description" content="Not a manicure. A commission. Hand-sculpted nail art by Maylei in downtown Wailuku, Maui." />
-<meta property="og:image" content="images/og-cover.jpg" />
+<meta property="og:image" content="images/og-cover.png" />
 <meta name="theme-color" content="#141019" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -304,7 +305,7 @@
   .foot-brand { font-family: var(--f-display); font-weight: 800; font-size: 2rem; }
   .foot-brand .dot { color: var(--accent); }
   .foot-brand p { font-family: var(--f-body); font-weight: 400; font-size: .95rem; color: #b6abb6; margin-top: 10px; max-width: 30ch; }
-  .foot-col h4 { font-family: var(--f-body); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .foot-col h3 { font-family: var(--f-body); font-weight: 600; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
   .foot-col a, .foot-col p { display: block; color: #cabfca; font-size: .96rem; margin-bottom: 8px; }
   .foot-col a:hover { color: #fff; }
   .foot-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 48px; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .82rem; color: #9d92a0; }
@@ -347,6 +348,43 @@
     .foot-grid { flex-direction: column; gap: 28px; }
   }
 </style>
+
+<!-- LocalBusiness (NailSalon) structured data. Before go-live: make "image" an ABSOLUTE URL on the live domain. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NailSalon",
+  "name": "Nailfie Studio HI",
+  "description": "Hand-sculpted acrylic, hard gel and Apres Gel-X nail artistry by Maylei, a licensed nail technician in downtown Wailuku, Maui. By appointment.",
+  "image": "images/og-cover.png",
+  "telephone": "+1-808-276-9927",
+  "email": "mayleidoesnails@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "16 S Market St, Ste 2G",
+    "addressLocality": "Wailuku",
+    "addressRegion": "HI",
+    "postalCode": "96793",
+    "addressCountry": "US"
+  },
+  "areaServed": "Maui, Hawaii",
+  "founder": { "@type": "Person", "name": "Maylei Agonoy" },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:30",
+    "closes": "17:30"
+  }],
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Nailfie+Studio+16+S+Market+St+Wailuku+HI+96793",
+  "sameAs": ["https://www.instagram.com/nailfiehi/"],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": "https://square.site/book/VBDAN65JPDBDH/nailfie-studio-hi-llc-wailuku-hi",
+    "name": "Book on Square"
+  }
+}
+</script>
 </head>
 
 <body>
@@ -367,13 +405,13 @@
   </button>
 </header>
 
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" aria-hidden="true">
   <a href="#work">Work</a>
   <a href="#services">Services</a>
   <a href="#story">Maylei</a>
   <a href="#visit">Visit</a>
   <a href="https://square.site/book/VBDAN65JPDBDH/nailfie-studio-hi-llc-wailuku-hi" class="btn btn-primary" target="_blank" rel="noopener">Book on Square →</a>
-</div>
+</nav>
 
 <main id="main">
 <span id="top"></span>
@@ -383,7 +421,7 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="eyebrow reveal">Wailuku · Maui · By appointment</span>
-      <h1 id="hero-h1" class="reveal d1">Not a manicure.<br>A <span class="commission">commission<svg class="ul stroke" viewBox="0 0 320 26" fill="none" aria-hidden="true"><path d="M6 17c46-9 96-13 150-11 40 1 86 6 158 2-58 9-120 12-176 10-44-2-90-2-126 6z" fill="currentColor"/></svg></span>.</h1>
+      <h1 id="hero-h1" class="reveal d1">Not a manicure. <br>A <span class="commission">commission<svg class="ul stroke" viewBox="0 0 320 26" fill="none" aria-hidden="true"><path d="M6 17c46-9 96-13 150-11 40 1 86 6 158 2-58 9-120 12-176 10-44-2-90-2-126 6z" fill="currentColor"/></svg></span>.</h1>
       <p class="lede reveal d2">Hand-sculpted acrylic, hard gel &amp; Apres Gel-X — one licensed artist, one chair, in downtown Wailuku. Your nails, treated like art.</p>
       <div class="cta-row reveal d3">
         <a href="https://square.site/book/VBDAN65JPDBDH/nailfie-studio-hi-llc-wailuku-hi" class="btn btn-primary" target="_blank" rel="noopener">Book on Square <span class="arrow">↗</span></a>
@@ -429,7 +467,7 @@
     </div>
     <div class="story-copy">
       <span class="eyebrow reveal">The artist</span>
-      <h2 id="story-h2" class="reveal d1">One chair.<br>Full attention.</h2>
+      <h2 id="story-h2" class="reveal d1">One chair. <br>Full attention.</h2>
       <p class="lead reveal d2">Maylei is a licensed nail technician who builds nails by hand — sculpted acrylic, hard gel, and the patented Apres Gel-X system — from a single studio on Market Street.</p>
       <p class="reveal d2">No assembly line, no rushing you out the door. Every set is shaped, structured, and painted one-on-one, so the fit lasts and the art is yours alone. Whether it's a clean almond for everyday or hand-painted detail for the occasion, you're booking the artist, not a station number.</p>
       <p class="sig reveal d3">Maylei Agonoy<small>Owner &amp; licensed nail artist · @nailfiehi</small></p>
@@ -482,7 +520,7 @@
 <section class="svc" id="services" aria-labelledby="svc-h2">
   <div class="wrap">
     <span class="eyebrow reveal">The menu</span>
-    <h2 id="svc-h2" class="reveal d1">Built by hand,<br>priced by the work.</h2>
+    <h2 id="svc-h2" class="reveal d1">Built by hand, <br>priced by the work.</h2>
     <p class="sub reveal d2">Sculpted enhancements and gel work — book the base service, add art on top. Removals and maintenance available for existing sets.</p>
 
     <!-- PRICES: only Structured Gel Manicure ($75 / 1hr) is confirmed from Square. Replace each "Confirm price" pill with Maylei's real rate before launch. -->
@@ -534,7 +572,7 @@
 <section class="voices on-dark" aria-labelledby="voices-h2">
   <div class="wrap">
     <span class="eyebrow reveal">Words from the chair</span>
-    <h2 id="voices-h2" class="reveal d1" style="font-size:clamp(2rem,5vw,3.4rem);margin-top:14px">Booked again before<br>they left.</h2>
+    <h2 id="voices-h2" class="reveal d1" style="font-size:clamp(2rem,5vw,3.4rem);margin-top:14px">Booked again before <br>they left.</h2>
     <!-- TESTIMONIALS: placeholders — paste real Yelp / client quotes (with first name + last initial). Do not invent. -->
     <div class="quote-grid">
       <blockquote class="quote reveal d1">
@@ -558,7 +596,7 @@
   <div class="wrap visit-grid">
     <div>
       <span class="eyebrow reveal">Visit &amp; book</span>
-      <h2 id="visit-h2" class="reveal d1">Downtown Wailuku.<br>By appointment.</h2>
+      <h2 id="visit-h2" class="reveal d1">Downtown Wailuku. <br>By appointment.</h2>
       <p class="lede reveal d2">One artist, one chair — appointments fill fast, especially weekends. Reserve your time on Square and come as you are.</p>
       <div class="cta-row reveal d2" style="margin-top:28px">
         <a href="https://square.site/book/VBDAN65JPDBDH/nailfie-studio-hi-llc-wailuku-hi" class="btn btn-primary" target="_blank" rel="noopener">Book your appointment <span class="arrow">↗</span></a>
@@ -598,20 +636,20 @@
         <p>Sculpted nail artistry by Maylei — downtown Wailuku, Maui.</p>
       </div>
       <div class="foot-col">
-        <h4>Explore</h4>
+        <h3>Explore</h3>
         <a href="#work">Work</a>
         <a href="#services">Services</a>
         <a href="#story">Meet Maylei</a>
         <a href="#visit">Visit &amp; book</a>
       </div>
       <div class="foot-col">
-        <h4>Studio</h4>
+        <h3>Studio</h3>
         <p>16 S Market St, Ste 2G<br>Wailuku, HI 96793</p>
         <p>Tue–Sat · 8:30a–5:30p</p>
         <a href="tel:+18082769927">(808) 276-9927</a>
       </div>
       <div class="foot-col">
-        <h4>Follow &amp; book</h4>
+        <h3>Follow &amp; book</h3>
         <a href="https://www.instagram.com/nailfiehi/" target="_blank" rel="noopener">Instagram · @nailfiehi</a>
         <a href="https://square.site/book/VBDAN65JPDBDH/nailfie-studio-hi-llc-wailuku-hi" target="_blank" rel="noopener">Book on Square ↗</a>
         <a href="mailto:mayleidoesnails@gmail.com">Email</a>
