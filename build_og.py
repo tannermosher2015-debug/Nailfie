@@ -55,16 +55,16 @@ draw.text((90, 130), "W A I L U K U   ·   M A U I", font=eb, fill=LROSE)
 # headline (serif)
 f_disp = font(DISPLAY, 84)
 f_ital = font(ITALIC, 84)
-draw.text((86, 200), "Not a", font=f_disp, fill=CREAM)
-draw.text((86, 296), "manicure.", font=f_disp, fill=CREAM)
+draw.text((86, 200), "Sculpted", font=f_disp, fill=CREAM)
+draw.text((86, 296), "by hand.", font=f_disp, fill=CREAM)
 y2 = 392
 x = 86
-draw.text((x, y2), "A ", font=f_disp, fill=CREAM)
-xw = draw.textlength("A ", font=f_disp)
-draw.text((x + xw, y2), "commission.", font=f_ital, fill=LROSE)
-# rose-gold brushstroke under "commission."
+draw.text((x, y2), "Worn like ", font=f_disp, fill=CREAM)
+xw = draw.textlength("Worn like ", font=f_disp)
+draw.text((x + xw, y2), "art.", font=f_ital, fill=LROSE)
+# rose-gold brushstroke under "art."
 uy = y2 + 92
-draw.rounded_rectangle([x + xw, uy, x + xw + draw.textlength("commission.", font=f_ital), uy + 11], radius=6, fill=ROSE)
+draw.rounded_rectangle([x + xw, uy, x + xw + draw.textlength("art.", font=f_ital), uy + 11], radius=6, fill=ROSE)
 
 # sub line
 f_sub = font(BODY, 29)
