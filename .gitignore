@@ -8,3 +8,5 @@ desktop.ini
 
 # Scraped IG originals + image-prep scratch — keep local, don't deploy
 images/source/
+images/ig_*.html
+images/ig_*.json
