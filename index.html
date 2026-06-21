@@ -18,7 +18,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="images/work-03.jpg" fetchpriority="high" />
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 
 <!-- LocalBusiness (NailSalon) structured data. Before go-live: make "image" an ABSOLUTE URL on the live domain. -->
 <script type="application/ld+json">
@@ -93,7 +95,7 @@
 
   body {
     font-family: var(--f-body); background: var(--bg); color: var(--text);
-    font-size: 1.0625rem; font-weight: 300; line-height: 1.7;
+    font-size: 1.0625rem; font-weight: 400; line-height: 1.7;
     -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden;
   }
 
@@ -206,7 +208,7 @@
   .story-photo .dots { position: absolute; bottom: -16px; left: -16px; width: 110px; height: 110px; background-image: radial-gradient(var(--accent) 2px, transparent 2.5px); background-size: 16px 16px; opacity: .45; z-index: -1; border-radius: 12px; }
   .story h2 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-top: 4px; }
   .story p { margin-top: 18px; max-width: 52ch; }
-  .story p.lead { font-size: 1.22rem; color: var(--primary); font-family: var(--f-display); font-style: italic; }
+  .story p.lead { font-size: 1.22rem; color: var(--primary); font-family: var(--f-display); font-weight: 500; font-style: italic; }
   .story .sign { margin-top: 24px; }
   .story .sign .nm { font-family: var(--f-script); font-size: 2.1rem; color: var(--rose-deep); line-height: 1; }
   .story .sign small { display: block; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mauve-soft); margin-top: 6px; }
@@ -219,7 +221,11 @@
   .circle { text-align: center; }
   .circle .ring { width: 100%; max-width: 250px; margin: 0 auto; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 7px solid #fff; box-shadow: var(--shadow); transition: transform .4s var(--ease); }
   .circle:hover .ring { transform: translateY(-8px) scale(1.02); }
-  .circle .ring img { width: 100%; height: 100%; object-fit: cover; }
+  .circle .ring img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+  .circle:hover .ring img { transform: scale(1.07); }
+  /* crafted reveal: framed photos settle in from a gentle zoom */
+  .hero-photo.reveal .frame img, .story-photo.reveal .frame img { transform: scale(1.08); transition: transform 1.2s var(--ease); }
+  .hero-photo.reveal.in .frame img, .story-photo.reveal.in .frame img { transform: scale(1); }
   .circle h3 { font-size: 1.5rem; margin-top: 20px; }
   .circle p { color: var(--mauve-soft); font-size: .9rem; margin-top: 4px; }
 
@@ -238,7 +244,7 @@
   .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 34px); max-width: 980px; margin: clamp(36px,5vw,52px) auto 0; }
   .quote { background: var(--bg); border-radius: 24px; padding: clamp(26px,3vw,40px); box-shadow: 0 18px 44px -30px rgba(94,70,80,.5); position: relative; }
   .quote .mk { font-family: var(--f-display); font-size: 3.2rem; color: var(--accent); line-height: .5; display: block; height: 26px; }
-  .quote p { font-family: var(--f-display); font-style: italic; font-size: 1.22rem; color: var(--primary); margin-top: 6px; }
+  .quote p { font-family: var(--f-display); font-weight: 500; font-style: italic; font-size: 1.22rem; color: var(--primary); margin-top: 6px; }
   .quote .who { margin-top: 16px; font-weight: 500; font-size: .9rem; color: var(--mauve-soft); }
   .quote .ph { display: inline-block; margin-bottom: 12px; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--rose-deep); border: 1px dashed #cdb4ad; border-radius: 999px; padding: 4px 11px; }
 
@@ -279,10 +285,10 @@
   .sticky-book.show { opacity: 1; transform: none; pointer-events: auto; }
 
   /* ============ REVEAL ============ */
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
   .reveal.in { opacity: 1; transform: none; }
   .reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none !important; } .card, .circle .ring { transition: none !important; } }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none !important; } .card, .circle .ring, .circle .ring img, .frame img { transition: none !important; transform: none !important; } }
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 900px) {
@@ -371,7 +377,7 @@
       <svg class="petal hero-petal-2" viewBox="0 0 20 28" aria-hidden="true"><path d="M10 0C4 8 0 16 10 28C20 16 16 8 10 0Z" fill="currentColor"/></svg>
       <!-- PHOTO: her softest/most romantic set as the hero. images/work-03.jpg (gold-leaf French). -->
       <div class="frame">
-        <img src="images/work-03.jpg" alt="Nude nails with delicate gold-leaf French tips by Maylei" />
+        <img src="images/work-03.jpg" alt="Nude nails with delicate gold-leaf French tips by Maylei" decoding="async" fetchpriority="high" />
       </div>
       <div class="tag" aria-hidden="true">
         <svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.4 12 21 12 21z" fill="currentColor"/></svg>
@@ -393,7 +399,7 @@
     <!-- PRICES: only Structured Gel Manicure ($75) is confirmed. Replace "Confirm price" with Maylei's real rates. -->
     <div class="cards">
       <article class="card reveal">
-        <div class="ph"><img src="images/hero.jpg" alt="A glossy chrome gel manicure by Maylei" />
+        <div class="ph"><img src="images/hero.jpg" alt="A glossy chrome gel manicure by Maylei" loading="lazy" decoding="async" />
           <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.4 12 21 12 21z" fill="currentColor"/></svg></span>
         </div>
         <h3>Structured Gel Manicure</h3>
@@ -401,7 +407,7 @@
         <span class="price">$75</span>
       </article>
       <article class="card reveal d1">
-        <div class="ph"><img src="images/work-02.jpg" alt="Long lilac stiletto acrylic full set" />
+        <div class="ph"><img src="images/work-02.jpg" alt="Long lilac stiletto acrylic full set" loading="lazy" decoding="async" />
           <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.4 12 21 12 21z" fill="currentColor"/></svg></span>
         </div>
         <h3>Acrylic Full Set</h3>
@@ -409,7 +415,7 @@
         <span class="price"><span class="tba">Confirm price</span></span>
       </article>
       <article class="card reveal d2">
-        <div class="ph"><img src="images/work-06.jpg" alt="Apres Gel-X tip extensions in emerald and gold" />
+        <div class="ph"><img src="images/work-06.jpg" alt="Apres Gel-X tip extensions in emerald and gold" loading="lazy" decoding="async" />
           <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.4 12 21 12 21z" fill="currentColor"/></svg></span>
         </div>
         <h3>Apres Gel-X</h3>
@@ -426,7 +432,7 @@
     <div class="story-photo reveal">
       <div class="dots" aria-hidden="true"></div>
       <!-- PHOTO: Maylei at the station / portrait. images/maylei.jpg stands in (a finished set). -->
-      <div class="frame"><img src="images/work-01.jpg" alt="A sculpted purple-chrome set by Maylei at Nailfie Studio" /></div>
+      <div class="frame"><img src="images/work-01.jpg" alt="A sculpted purple-chrome set by Maylei at Nailfie Studio" loading="lazy" decoding="async" /></div>
     </div>
     <div class="story-copy">
       <span class="eyebrow reveal">the artist</span>
@@ -453,12 +459,12 @@
     </div>
     <!-- GALLERY: her real @nailfiehi work in circular frames. -->
     <div class="circles">
-      <figure class="circle reveal"><div class="ring"><img src="images/work-03.jpg" alt="Nude nails with gold-leaf French tips"></div><h3>Gold-leaf French</h3><p>Soft &amp; bridal</p></figure>
-      <figure class="circle reveal d1"><div class="ring"><img src="images/work-02.jpg" alt="Long lilac stiletto nails, high gloss"></div><h3>Lilac stiletto</h3><p>Long &amp; glossy</p></figure>
-      <figure class="circle reveal d2"><div class="ring"><img src="images/work-01.jpg" alt="Purple chrome almond nails with marble accents"></div><h3>Purple chrome</h3><p>Marble swirl</p></figure>
-      <figure class="circle reveal"><div class="ring"><img src="images/work-04.jpg" alt="Silver chrome nails with hand-painted black stars"></div><h3>Chrome &amp; stars</h3><p>Hand-painted</p></figure>
-      <figure class="circle reveal d1"><div class="ring"><img src="images/work-06.jpg" alt="Emerald green and gold tip nails"></div><h3>Emerald &amp; gold</h3><p>Gel-X tips</p></figure>
-      <figure class="circle reveal d2"><div class="ring"><img src="images/work-05.jpg" alt="Black glossy almond nails with hand-painted accent"></div><h3>Black gloss</h3><p>Art accent</p></figure>
+      <figure class="circle reveal"><div class="ring"><img src="images/work-03.jpg" alt="Nude nails with gold-leaf French tips" loading="lazy" decoding="async"></div><h3>Gold-leaf French</h3><p>Soft &amp; bridal</p></figure>
+      <figure class="circle reveal d1"><div class="ring"><img src="images/work-02.jpg" alt="Long lilac stiletto nails, high gloss" loading="lazy" decoding="async"></div><h3>Lilac stiletto</h3><p>Long &amp; glossy</p></figure>
+      <figure class="circle reveal d2"><div class="ring"><img src="images/work-01.jpg" alt="Purple chrome almond nails with marble accents" loading="lazy" decoding="async"></div><h3>Purple chrome</h3><p>Marble swirl</p></figure>
+      <figure class="circle reveal"><div class="ring"><img src="images/work-04.jpg" alt="Silver chrome nails with hand-painted black stars" loading="lazy" decoding="async"></div><h3>Chrome &amp; stars</h3><p>Hand-painted</p></figure>
+      <figure class="circle reveal d1"><div class="ring"><img src="images/work-06.jpg" alt="Emerald green and gold tip nails" loading="lazy" decoding="async"></div><h3>Emerald &amp; gold</h3><p>Gel-X tips</p></figure>
+      <figure class="circle reveal d2"><div class="ring"><img src="images/work-05.jpg" alt="Black glossy almond nails with hand-painted accent" loading="lazy" decoding="async"></div><h3>Black gloss</h3><p>Art accent</p></figure>
     </div>
   </div>
 </section>
