@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Nailfie Studio">
-  <rect width="64" height="64" rx="15" fill="#141019"/>
-  <path d="M22 31c0-13 20-13 20 0v17c0 2.5-1.8 4-4 4H26c-2.2 0-4-1.5-4-4z" fill="#FF2E7E"/>
-  <rect x="27.5" y="22" width="4" height="26" rx="2" fill="#fff" opacity="0.32"/>
+  <rect width="64" height="64" rx="15" fill="#5E4650"/>
+  <path d="M22 31c0-13 20-13 20 0v17c0 2.5-1.8 4-4 4H26c-2.2 0-4-1.5-4-4z" fill="#C08A7E"/>
+  <rect x="27.5" y="22" width="4" height="26" rx="2" fill="#FBF1EA" opacity="0.4"/>
 </svg>
